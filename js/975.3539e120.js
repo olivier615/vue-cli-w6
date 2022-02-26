@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkcli_demo"]=self["webpackChunkcli_demo"]||[]).push([[975],{9975:function(n,t,r){r.r(t),r.d(t,{default:function(){return a}});var e=r(6252),u=r(9963);const c=(0,e._)("h2",null,[(0,e._)("b",null,"Oops！ "),(0,e.Uk)("找不到頁面喔...")],-1);function l(n,t){return(0,e.wg)(),(0,e.iD)(e.HY,null,[c,(0,e._)("button",{class:"btn btn-primary",onClick:t[0]||(t[0]=(0,u.iM)((n=>this.$router.back(-1)),["prevent"]))},"回上一頁")],64)}var i=r(3744);const o={},s=(0,i.Z)(o,[["render",l]]);var a=s}}]);
+//# sourceMappingURL=975.3539e120.js.map
