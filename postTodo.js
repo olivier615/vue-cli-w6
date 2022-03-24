@@ -1,4 +1,4 @@
-const errHandle = require('./errorHandle');
+const errorHandle = require('./errorHandle');
 function postTodo(res, req, headers, body, todos, uuidv4) {
     
     res.writeHead(200, headers);
@@ -11,7 +11,7 @@ function postTodo(res, req, headers, body, todos, uuidv4) {
         try{
             const title = JSON.parse(body).title;
             if(title === undefined ){
-                errHandle(res);
+                errorHandle(res);
             }else{
 
                 const todo = {
@@ -28,7 +28,7 @@ function postTodo(res, req, headers, body, todos, uuidv4) {
             }
            
         }catch{
-            errHandle(res);
+            errorHandle(res);
         }
     })
 }
