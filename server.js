@@ -3,6 +3,8 @@ const { v4: uuidv4 } = require('uuid');
 const errHandle = require('./errorHandle');
 const todos = [];
 
+const getTodo = require('./getTodo');
+
 const requestListener = (req, res)=>{
     const headers = {
         'Access-Control-Allow-Headers': 'Content-Type, Authorization, Content-Length, X-Requested-With',
@@ -17,7 +19,7 @@ const requestListener = (req, res)=>{
     })
     
     if(req.url=="/todos" && req.method == "GET"){
-        // getTodo.js
+        getTodo(res, headers, todos);
     }else if(req.url=="/todos" && req.method == "POST"){
         // postTodo.js
     }else if(req.url=="/todos" && req.method == "DELETE"){
