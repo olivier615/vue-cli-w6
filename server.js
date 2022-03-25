@@ -18,6 +18,7 @@ const requestListener = (req, res)=>{
     
     req.on('data', chunk=>{
         body+=chunk;
+        console.log(123);
     })
     
     if(req.url=="/todos" && req.method == "GET"){
