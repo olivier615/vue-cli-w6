@@ -1,5 +1,3 @@
-1212testtest
-
 function getTodo(res, headers, todos) {
     res.writeHead(200, headers);
     const jsonStr = JSON.stringify({
