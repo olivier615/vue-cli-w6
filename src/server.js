@@ -1,0 +1,40 @@
+const http = require('http')
+const middleware = require('./middleware')
+const httpStatus = require('./config/httpStatus')
+const todos = []
+
+const requestListener = (req, res) => {
+  let body = ''
+
+  req
+    .on('data', (chunk) => {
+      body += chunk
+    })
+    .on('end', () => {
+      middleware(req, res, body, handlers)
+    })
+}
+
+const handlers = (req, res) => {
+  if (req.url == '/todos' && req.method == 'GET') {
+    // getTodo.js
+  } else if (req.url == '/todos' && req.method == 'POST') {
+    // postTodo.js
+  } else if (req.url == '/todos' && req.method == 'DELETE') {
+    // deleteTodo.js
+  } else if (req.url.startsWith('/todos/') && req.method == 'DELETE') {
+    // deleteTodo.js
+  } else if (req.url.startsWith('/todos/') && req.method == 'PATCH') {
+    // patchTodo.js
+  } else if (req.method == 'OPTIONS') {
+    res.sendStatus(httpStatus.OK)
+  } else {
+    res.status(httpStatus.NOT_FOUND).json({
+      status: 'false',
+      message: '無此網站路由',
+    })
+  }
+}
+
+const server = http.createServer(requestListener)
+server.listen(process.env.PORT || 3005)
