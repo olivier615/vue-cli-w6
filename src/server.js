@@ -1,6 +1,8 @@
 const http = require('http')
 const middleware = require('./middleware')
 const httpStatus = require('./config/httpStatus')
+const getTodo = require('./getTodo')
+// const postTodo = require('./postTodo')
 const todos = []
 
 const requestListener = (req, res) => {
@@ -17,9 +19,9 @@ const requestListener = (req, res) => {
 
 const handlers = (req, res) => {
   if (req.url == '/todos' && req.method == 'GET') {
-    // getTodo.js
+    getTodo(res, todos)
   } else if (req.url == '/todos' && req.method == 'POST') {
-    // postTodo.js
+    // postTodo(res, req, todos)
   } else if (req.url == '/todos' && req.method == 'DELETE') {
     // deleteTodo.js
   } else if (req.url.startsWith('/todos/') && req.method == 'DELETE') {
