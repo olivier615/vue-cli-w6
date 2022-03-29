@@ -1,6 +1,7 @@
 const http = require('http')
 const middleware = require('./middleware')
 const httpStatus = require('./config/httpStatus')
+const deleteTodosAll = require('./deleteTodo')
 const getTodo = require('./getTodo')
 // const postTodo = require('./postTodo')
 const todos = []
@@ -24,6 +25,7 @@ const handlers = (req, res) => {
     // postTodo(res, req, todos)
   } else if (req.url == '/todos' && req.method == 'DELETE') {
     // deleteTodo.js
+    deleteTodosAll(res, todos)
   } else if (req.url.startsWith('/todos/') && req.method == 'DELETE') {
     // deleteTodo.js
   } else if (req.url.startsWith('/todos/') && req.method == 'PATCH') {
